@@ -31,19 +31,19 @@ app.post("/morse-converter", function(req, res){
     //// }
     
     //=======================
-    var test = ""
+    var result = ""
     for(var i=0; i<input.length; i++){
         for(var key in morseTranslation){
             if(input[i]===key)
-                test = test+morseTranslation[key]
+                result = result+morseTranslation[key]
         }
     }
     
-    console.log(test)
+    console.log(result)
     //=======================
     //console.log("InputArray: "+ typeof inputArray);
     //console.log(morseTranslation.A)
-    res.render("result.ejs");
+    res.render("result.ejs", {result:result});
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
