@@ -6,46 +6,67 @@ var morseTranslation = {
     "A" : ".-",
     "B" : "-...",
     "C" : "-.-.",
+    "D" : "-..",
+    "E" : ".",
+    "F" : "..-.",
+    "G" : "--.",
+    "H" : "....",
+    "I" : "..",
+    "J" : ".---",
+    "K" : "-.-",
+    "L" : ".-..",
+    "M" : "--",
+    "N" : "-.",
+    "O" : "---",
+    "P" : ".--.",
+    "Q" : "--.-",
+    "R" : ".-.",
+    "S" : "...",
+    "T" : "-",
+    "U" : "..-",
+    "V" : "...-",
+    "W" : ".--",
+    "X" : "-..-",
+    "Y" : "-.--",
+    "Z" : "--..",
     " " : "      "
 }
 
+//SETUP
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname+"/public"));
 
+
+//REDIRECT ROOT ROUTE
 app.get("/", function(req, res){
     res.redirect("/morse-converter");
 });
 
+//RENDER morse_converter
 app.get("/morse-converter", function(req, res){
    res.render("morse_converter.ejs"); 
 });
 
+//Translate user input (English) into Morse and render result page.
 app.post("/morse-converter", function(req, res){
     var input = req.body.user_input.toUpperCase();
-    //console.log(result);
-    //console.log(typeof result);
-    
-    //// var inputArray = []
-    //// for(var i=0; i<input.length; i++){
-    ////     inputArray.push(input[i]);
-    //// }
-    
-    //=======================
     var result = ""
     for(var i=0; i<input.length; i++){
         for(var key in morseTranslation){
-            if(input[i]===key)
-                result = result+morseTranslation[key]
+            //if the character in the input string is equal to the object key...
+            if(input[i]===key){
+                //...append the corresponding object key value (Morse character) to 'result' string
+                result = result+" "+morseTranslation[key];
+            }
         }
     }
     
-    console.log(result)
-    //=======================
-    //console.log("InputArray: "+ typeof inputArray);
-    //console.log(morseTranslation.A)
+    console.log(result);
+
     res.render("result.ejs", {result:result});
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Morse to English server initialised.")
+    console.log("Morse to English server initialised.");
 });
