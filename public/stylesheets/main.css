@@ -35,6 +35,12 @@ textarea {
     background: white;
 }
 
+.back{
+    display: block;
+    width: 66px;
+    margin: 15px auto;
+}
+
 form button {
     display: block;
     width: 306px;
