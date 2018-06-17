@@ -45,4 +45,9 @@ form button {
     font-family: 'Montserrat', sans-serif;
     padding: 8px;
     cursor: pointer;
+    opacity: 0.85;
+}
+
+form button:hover {
+    opacity: 1;
 }
