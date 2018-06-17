@@ -61,6 +61,7 @@ app.post("/morse-converter", function(req, res){
             }
         }
     }
+
     
     console.log(result);
 
@@ -68,5 +69,5 @@ app.post("/morse-converter", function(req, res){
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Morse to English server initialised.");
+    console.log("Morse Convertor server initialised.");
 });

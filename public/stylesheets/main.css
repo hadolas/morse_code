@@ -1,3 +1,48 @@
+
+
 body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: #F4F2F3;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: .2rem;
     background: #E0DADB;
+    margin: 0;
+    padding: 10px;
+
+}
+
+.spacing {
+    padding-top: 10px
+}
+
+textarea {
+    display: block;
+    resize: vertical;
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.middle{
+    display: block;
+    width: 300px;
+    min-height: 100px;
+    margin: 0 auto;
+    background: white;
+}
+
+form button {
+    display: block;
+    width: 306px;
+    margin: 0 auto;
+    border: none;
+    background: #EA526F;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+    cursor: pointer;
 }

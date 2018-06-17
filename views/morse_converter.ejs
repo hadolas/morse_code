@@ -1,8 +1,15 @@
 <% include ./partials/header %>
-<h1>Morse Converter</h1>
+<div>
+    <h1>Morse Converter</h1>
+</div>
 
-<form action="/morse-converter" method="POST">
-    <input type="text", name="user_input", placeholder="Enter Morse here:">
-    <button>Submit</button>
-</form>
+<!--<div class="center-form">-->
+<div class="spacing">
+    <form action="/morse-converter" method="POST">
+        <!--<input type="text", name="user_input", placeholder="Enter Morse here:">-->
+        <textarea name="user_input" placeholder="Enter English here:"></textarea>
+        <button>Translate</button>
+    </form>
+</div>
+
 <% include ./partials/footer %>
