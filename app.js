@@ -40,16 +40,16 @@ app.use(express.static(__dirname+"/public"));
 
 //REDIRECT ROOT ROUTE
 app.get("/", function(req, res){
-    res.redirect("/morse-converter");
+    res.redirect("/english-to-morse");
 });
 
-//RENDER morse_converter
-app.get("/morse-converter", function(req, res){
-   res.render("morse_converter.ejs"); 
+//RENDER english-to-morse
+app.get("/english-to-morse", function(req, res){
+   res.render("english-to-morse.ejs");
 });
 
 //Translate user input (English) into Morse and render result page.
-app.post("/morse-converter", function(req, res){
+app.post("/english-to-morse", function(req, res){
     var input = req.body.user_input.toUpperCase();
     var result = ""
     for(var i=0; i<input.length; i++){
@@ -66,6 +66,17 @@ app.post("/morse-converter", function(req, res){
     console.log(result);
 
     res.render("result.ejs", {result:result});
+});
+
+//RENDER morse-to-english
+app.get("/morse-to-english", function(req, res){
+    res.send("Morse to english page");
+});
+
+//RENDER morse key guide
+
+app.get("/morse-key-guide", function(req, res){
+   res.send("Morse Key Guide page"); 
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
