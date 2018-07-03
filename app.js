@@ -32,6 +32,37 @@ var morseTranslation = {
     " " : "      "
 }
 
+var englishTranslation = {
+    ".-"   : "A",
+    "-..." : "B",
+    "-.-." : "C",
+    "-.."  : "D",
+    "."    : "E",
+    "..-." : "F",
+    "--."  : "G",
+    "...." : "H",
+    ".."   : "I",
+    ".---" : "J",
+    "-.-"  : "K",
+    ".-.." : "L",
+    "--"   : "M",
+    "-."   : "N",
+    "---"  : "O",
+    ".--." : "P",
+    "--.-" : "Q",
+    ".-."  : "R",
+    "..."  : "S",
+    "-"    : "T",
+    "..-"  : "U",
+    "...-" : "V",
+    ".--"  : "W",
+    "-..-" : "X",
+    "-.--" : "Y",
+    "--.." : "Z",
+    " "    : "_"
+}
+
+
 //SETUP
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
@@ -45,7 +76,7 @@ app.get("/", function(req, res){
 
 //RENDER english-to-morse
 app.get("/english-to-morse", function(req, res){
-   res.render("english-to-morse.ejs");
+   res.render("english-to-morse");
 });
 
 //Translate user input (English) into Morse and render result page.
@@ -61,16 +92,30 @@ app.post("/english-to-morse", function(req, res){
             }
         }
     }
-
-    
     console.log(result);
-
-    res.render("result.ejs", {result:result});
+    res.render("result", {result:result});
 });
 
 //RENDER morse-to-english
 app.get("/morse-to-english", function(req, res){
-    res.send("Morse to english page");
+    res.render("morse-to-english");
+});
+
+app.post("/morse-to-english", function(req, res){
+    var input = req.body.user_input.split(" ");
+    var result=""
+    console.log(input);
+        for(var i=0; i<input.length; i++){
+        for(var key in englishTranslation){
+            //if the character in the input string is equal to the object key...
+            if(input[i]===key){
+                //...append the corresponding object key value (Morse character) to 'result' string
+                result = result+englishTranslation[key];
+            }
+        }
+    }
+    console.log(result);
+    res.render("result", {result:result});
 });
 
 //RENDER morse key guide
