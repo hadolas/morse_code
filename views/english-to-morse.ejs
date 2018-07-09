@@ -1,16 +1,20 @@
 <% include ./partials/header %>
-<!--<div>-->
-<!--    <h1>Morse Translator</h1>-->
-<!--</div>-->
-<h4 class="center">English to Morse</h4>
 
-<!--<div class="center-form">-->
+<h4 class="center">English/Morse Convertor</h4>
+
+
 <div>
     <form action="/english-to-morse" method="POST">
-        <!--<input type="text", name="user_input", placeholder="Enter Morse here:">-->
-        <textarea name="user_input" placeholder="Enter English here:"></textarea>
+        <textarea name="user_input" placeholder="Enter English or Morse here:"></textarea>
         <button>Translate</button>
     </form>
+</div>
+
+<div style="padding:40px">
+    <h4>Morse Key Guide</h4>
+    <p>
+        <%=keyGuide%>
+    </p>
 </div>
 
 <% include ./partials/footer %>
