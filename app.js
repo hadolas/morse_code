@@ -28,9 +28,8 @@ var engToMorse = {
     "W" : ".--",
     "X" : "-..-",
     "Y" : "-.--",
-    "Z" : "--..",
-    " " : " "
-}
+    "Z" : "--.."
+};
 
 var morseToEng = {
     ".-"   : "A",
@@ -58,9 +57,8 @@ var morseToEng = {
     ".--"  : "W",
     "-..-" : "X",
     "-.--" : "Y",
-    "--.." : "Z",
-    " "    : "_"
-}
+    "--.." : "Z"
+};
 
 
 //SETUP
@@ -78,10 +76,10 @@ app.get("/", function(req, res){
 //RENDER english-to-morse
 app.get("/english-to-morse", function(req, res){
     //loop through engToMorseObj and add each key:value to the 'keyGuide' string
-    var keyGuide="";
-    for(var p in engToMorse){
-        if(engToMorse.hasOwnProperty(p)){
-            keyGuide += p + " , " + engToMorse[p] +"\n";
+    var keyGuide=[];
+    for(var key in engToMorse){
+        if(engToMorse.hasOwnProperty(key)){
+            keyGuide.push(key + " : " + engToMorse[key]);
         }
     }
     console.log("This is keyguide: "+keyGuide);

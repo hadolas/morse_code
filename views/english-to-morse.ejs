@@ -10,10 +10,13 @@
     </form>
 </div>
 
-<div style="padding:40px">
+
+<div class="morseKeyGuide">
     <h4>Morse Key Guide</h4>
     <p>
-        <%=keyGuide%>
+        <% keyGuide.forEach(function(element){ %>
+              <div><%=element%></div>
+        <% }); %>
     </p>
 </div>
 

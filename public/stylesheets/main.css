@@ -94,3 +94,16 @@ li a {
 li a:hover{
     text-decoration: underline crimson;
 }
+
+.morseKeyGuide {
+    text-align:center;
+}
+
+.morseKeyGuide div {
+    display:inline-block;
+    min-width:50px;
+}
+
+.morseKeyGuide div:hover{
+    font-weight: bold;
+}
