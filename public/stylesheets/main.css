@@ -109,3 +109,12 @@ li a:hover{
 .morseKeyGuide div:hover{
     font-weight: bold;
 }
+
+.howToUse {
+    text-align: center;
+    padding:5px;
+}
+
+.howToUse span {
+    color: red
+}

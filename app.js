@@ -29,7 +29,7 @@ var engToMorse = {
     "X" : "-..-",
     "Y" : "-.--",
     "Z" : "--..",
-    " " : "\xa0\xa0\xa0\xa0"
+     " " : "\xa0\xa0\xa0"
 };
 
 var morseToEng = {

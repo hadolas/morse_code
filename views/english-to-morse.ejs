@@ -1,5 +1,16 @@
 <% include ./partials/header %>
 
+<div class="howToUse">
+    <h4>How To Use</h4>
+    <p>
+        <span>For English to Morse: </span>Use letters and numbers from the English alphabet. Separate each word with a single space.
+    </p>
+    <p>
+        <span>For Morse to English: </span>Use dots ('.') and dashes ('-') to represent letters and numbers. 
+Separate each word with a forward-slash ('/').
+    </p>
+</div>
+
 <div>
     <form action="/english-to-morse" method="POST">
         <textarea name="user_input" placeholder="Enter English or Morse here:"></textarea>
