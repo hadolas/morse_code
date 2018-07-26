@@ -6,19 +6,16 @@ body {
     background: #F4F2F3;
 }
 
+/*Morse Translator page heading*/
 h1 {
     text-align: center;
     letter-spacing: .2rem;
     background: #E0DADB;
     margin: 0;
     padding: 10px;
-
 }
 
-.spacing {
-    padding-top: 10px
-}
-
+/*Textarea for user to input morse/english */
 textarea {
     display: block;
     resize: vertical;
@@ -27,6 +24,7 @@ textarea {
     margin: 25px auto 10px;
 }
 
+/* Display for results box*/
 div .middle{
     display: block;
     width: 300px;
@@ -36,17 +34,20 @@ div .middle{
     border: 4px double #EA526F;
 }
 
+/*Center 'result' heading*/
 .center{
     margin-top: 35px;
     text-align: center;
     color: crimson;
 }
 
+/*Text display in results box*/
 div .middle h4 {
     margin: 0;
     padding: 4px 10px;
 }
 
+/*The 'go back' anchor tag on the results page*/
 .back{
     display: block;
     width: 66px;
@@ -97,6 +98,7 @@ li a:hover{
 
 .morseKeyGuide {
     text-align:center;
+    padding:40px;
 }
 
 .morseKeyGuide div {
